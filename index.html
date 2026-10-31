@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جاري تحويلك إلى الحلقة...</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            padding-top: 100px;
+            margin: 0;
+        }
+        .box {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            max-width: 90%;
+        }
+        h2 { color: #4CAF50; }
+        p { font-size: 18px; }
+        #countdown { font-weight: bold; color: #ff9800; font-size: 22px; }
+    </style>
+    <script>
+        // رابط إعلان Adsterra الذكي الخاص بك
+        var adLink = "https://asiafilm.org/4/a2911621ddbd59b00c313d93d37b9b7c";
+        
+        // رابط الحلقة الخاص بك
+        var targetLink = "https://youtu.be/F2n1jjdE6S0?si=_HVaOC8Ab43a7V0Z";
+
+        // فتح الإعلان وتوجيه الزائر
+        function redirectUser() {
+            window.open(adLink, '_blank');
+            window.location.href = targetLink;
+        }
+
+        // عداد تنازلي لمدة 5 ثوانٍ
+        var seconds = 5;
+        function startTimer() {
+            var timerElement = document.getElementById("countdown");
+            var countdownInterval = setInterval(function() {
+                seconds--;
+                timerElement.textContent = seconds;
+                if (seconds <= 0) {
+                    clearInterval(countdownInterval);
+                    redirectUser();
+                }
+            }, 1000);
+        }
+        window.onload = startTimer;
+    </script>
+</head>
+<body>
+
+    <div class="box">
+        <h2>جاري تجهيز الحلقة...</h2>
+        <p>يرجى الانتظار قليلاً، سيتم تحويلك الآن تلقائياً</p>
+        <p>خلال <span id="countdown">5</span> ثوانٍ</p>
+    </div>
+
+</body>
+</html>
